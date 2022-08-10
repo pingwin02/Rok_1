@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="kosmicznezdjecia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="galeria" />
+				<xs:element ref="ciala-niebieskie" />
+				<xs:element ref="media" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="galeria">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="album" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="album">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="naglowek" />
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="zdjecie" />
+			</xs:sequence>
+			<xs:attribute name="year" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="2019" />
+						<xs:enumeration value="2020" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="naglowek" type="xs:string" />
+	<xs:element name="zdjecie">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="oautorze" />
+				<xs:element ref="obiekt" />
+				<xs:element ref="miejsce" />
+				<xs:element ref="data" />
+				<xs:element ref="godzina" />
+				<xs:element ref="obraz" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="komentarz" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="oautorze">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="imie" />
+					<xs:element ref="nazwisko" />
+				</xs:choice>
+				<xs:element ref="email" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="tel" />
+				<xs:element ref="wyniki" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="imie" type="xs:string" />
+	<xs:element name="nazwisko" type="xs:string" />
+	<xs:element name="email" type="xs:string" />
+	<xs:element name="tel" type="xs:string" />
+	<xs:element name="wyniki">
+		<xs:complexType>
+			<xs:attribute default="TAK" name="zgoda">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="TAK" />
+						<xs:enumeration value="NIE" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="obiekt" type="xs:string" />
+	<xs:element name="miejsce" type="xs:string" />
+	<xs:element name="data" type="xs:string" />
+	<xs:element name="godzina" type="xs:string" />
+	<xs:element name="obraz">
+		<xs:complexType>
+			<xs:attribute name="zrodlo" type="xs:string" use="required" />
+			<xs:attribute name="podpis" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="komentarz" type="xs:string" />
+	<xs:element name="ciala-niebieskie">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="naglowek" />
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="cialo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cialo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nazwa" />
+				<xs:element ref="typ" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="odkrywca" />
+				<xs:element ref="rok-odkrycia" />
+				<xs:element minOccurs="0" maxOccurs="1" ref="miejsce-odkrycia" />
+				<xs:element ref="odleglosc" />
+				<xs:element ref="link" />
+			</xs:sequence>
+			<xs:attribute name="n" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nazwa" type="xs:string" />
+	<xs:element name="typ" type="xs:string" />
+	<xs:element name="odkrywca">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="imie" />
+				<xs:element ref="nazwisko" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rok-odkrycia" type="xs:string" />
+	<xs:element name="miejsce-odkrycia" type="xs:string" />
+	<xs:element name="odleglosc" type="xs:string" />
+	<xs:element name="link">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="zrodlo" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="media">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="obraz" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
