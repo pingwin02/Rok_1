@@ -1,0 +1,1 @@
+TMP_DIRS="/tmp /var/tmp $HOME/.cache /var/log /var/cache"

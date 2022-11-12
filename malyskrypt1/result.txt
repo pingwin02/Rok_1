@@ -1,0 +1,12 @@
+   3915 cdlinux-0.5.8-2.iso
+   1871 cdlinux-maly-0.5.8.iso
+    761 cdlinux-maly-0.5.9-pre1.iso
+    148 cdlinux-0.5.7-pre2.iso
+    107 cdlinux-0.5.8-1.iso
+     84 cdlinux-maly-0.5.8-rc1.iso
+     71 cdlinux-duzy-current.iso
+     55 cdlinux-0.5.8.iso
+     32 cdlinux-maly-current.iso
+     30 cdlinux-maly-0.5.7-pre2.iso
+      4 cdlinux-0.5.7-pre4.iso
+      3 cdlinux-0.5.8-rc2.iso
