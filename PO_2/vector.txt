@@ -1,0 +1,114 @@
+#include <initializer_list>
+#include <iostream>
+#include <cmath>
+class Vector {
+	double* array;
+	std::size_t size;
+public:
+	//Parametr typu std::initializer_list pozwoli na uruchomienie
+	//konstruktora z dowoln¹ liczb¹ wyst¹pieñ liczb typu double.
+	// Bêdzie to wygl¹da³o jak inicjalizacja tablicy. Przyk³ad:
+	//Vector v1({1,2,3,4,5,5.5});
+	//lub
+	//Vector v1{1,2,3,4,5,5.5};
+	//lub
+	//Vector v1 = {1,2,3,4,5,5.5};
+	//Jest to cecha C++11
+	Vector(std::initializer_list<double> initList)
+		: size{ initList.size() }, array{ new double[initList.size()] }
+	{
+		std::size_t i = 0;
+		for (double v : initList)
+		{
+			array[i] = v;
+			i++;
+		}
+	}
+	Vector(const Vector& other) //Konstruktor kopiujacy
+		: size(other.size), array{ new double[other.size] } {
+		//Informacja diagnostyczna
+		std::cout << "Vector(const Vector&)" << std::endl;
+		for (std::size_t i = 0; i < size; i++)
+			array[i] = other.array[i];
+	}
+	Vector(Vector&& other) {
+		std::cout << "Vector(Vector&&)" << std::endl;
+		array = other.array; //Pobranie wskaŸnika na dane
+		size = other.size; //Kopiowanie rozmiaru wektora
+		other.array = nullptr; //Usuwanie odniesienia do danych obiekcie other
+		other.size = 0; //Ustawianie rozmiaru wektora na 0
+	}
+	//Po wyjœciu z cia³a konstruktora obiekt na który wskazuje
+	//referencja other zosta³ pozostawiony w poprawnym stanie.
+	Vector(std::size_t size) 
+		: size(size), array{ new double[size] } {
+		//Informacja diagnostyczna
+		std::cout << "Vector(" << size << ")" << std::endl;
+	}
+	std::size_t GetSize() const {
+		return size;
+	}
+	const double& operator[](std::size_t i) const {
+		return array[i];
+	}
+	double& operator[](std::size_t i)
+	{
+		return array[i];
+	}
+	//Implementacja operatora przypisania z wykorzystaniem copy-swap
+	Vector* operator=(const Vector& right) {
+		//Informacja diagnostyczna
+		std::cout << "operator=(const Vector&)" << std::endl;
+		Vector tmp = right; //Tworzenie obiektu tymczasowego
+		//Zamiana wskaŸników na tablice miejscami
+		std::swap(array, tmp.array);
+		//Zamiana informacji o wielkoœci tablicy
+		std::swap(size, tmp.size);
+		return this;
+	}
+	Vector* operator=(Vector&& right) {
+		std::cout << "operator=(Vector&&)" << std::endl;
+		std::swap(array, right.array); //Zamiana wskaŸników na tablice miejscami
+		std::swap(size, right.size); //Zamiana informacji o wielkoœci tablicy
+		return this;
+	}
+	~Vector()
+	{
+		if (array != nullptr) {
+			//Informacja diagnostyczna
+			std::cout << "~Vector()" << std::endl;
+			std::cout << "Releasing memory " << array << std::endl;
+			delete[] array;
+		}
+	}
+};
+std::ostream& operator<<(std::ostream& ostr, const Vector& v) {
+	ostr << "Vector{";
+	for (std::size_t i = 0; i < v.GetSize(); i++)
+	{
+		if (i > 0)
+			ostr << ',';
+		ostr << v[i];
+	}
+	ostr << '}';
+	return ostr;
+}
+
+int main2() {
+	Vector v1 = { 1,2,3,4 }; 
+	Vector v2 = std::move(v1); 
+
+	//Co wypisz¹ to dwie linie? 
+
+	std::cout << "v1: " << v1 << std::endl; 
+	std::cout << "v2: " << v2 << std::endl; 
+
+	Vector v3 = {3,4,5}; 
+	v3 = std::move(v2); 
+
+	//A co wypisz¹ te dwie linie? 
+	std::cout << "v2: " << v2 << std::endl;
+	std::cout << "v3: " << v3 << std::endl;
+
+	return 0;
+}
