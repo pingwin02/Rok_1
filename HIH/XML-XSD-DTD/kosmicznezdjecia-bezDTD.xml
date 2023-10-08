@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<kosmicznezdjecia
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="kosmicznezdjecia.xsd">
+
+	<galeria>
+		<album year="2019">
+			<naglowek>Baza nagrodzonych fotografii — Rok 2019</naglowek>
+			<zdjecie id="1">
+				<oautorze>
+					<imie>Paweł</imie>
+					<nazwisko>Gazowy</nazwisko>
+					<email>gas123@paul.net</email>
+					<tel>154-915-132</tel>
+					<wyniki zgoda="NIE"/>
+				</oautorze>
+				<obiekt>Jowisz, planeta</obiekt>
+				<miejsce>Rio De Janeiro, Brazylia</miejsce>
+				<data>2019-03-16</data>
+				<godzina>22:32:00</godzina>
+				<obraz zrodlo="images/jowisz.jpg"/>
+				<komentarz>Zdjęcie zostało zrobione późnym wieczorem podczas wyjazdu do Ameryki Północnej</komentarz>
+			</zdjecie>
+			<zdjecie id="2">
+				<oautorze>
+					<imie>Damian</imie>
+					<nazwisko>Jankowski</nazwisko>
+					<email>s188597@student.pg.edu.pl</email>
+					<wyniki zgoda="TAK"/>
+				</oautorze>
+				<obiekt>Zaćmienie Słońca</obiekt>
+				<miejsce>Gdansk, Polska</miejsce>
+				<data>2019-07-29</data>
+				<godzina>13:35:00</godzina>
+				<obraz zrodlo="images/zacmienie.jpg"/>
+				<komentarz>Tę fotografię zrobiłem siedząc na balkonie.</komentarz>
+			</zdjecie>
+			<zdjecie id="3">
+				<oautorze>
+					<nazwisko>Gorący</nazwisko>
+					<imie>Michał</imie>
+					<email>hotmichael666@gmail.com</email>
+					<tel>541-214-301</tel>
+					<wyniki zgoda="NIE"/>
+				</oautorze>
+				<obiekt>Słońce, gwiazda</obiekt>
+				<miejsce>Quito, Ekwador</miejsce>
+				<data>2019-09-23</data>
+				<godzina>12:00:00</godzina>
+				<obraz zrodlo="images/slonce.jpg"/>
+			</zdjecie>
+			<zdjecie id="4">
+				<oautorze>
+					<imie>Krzysztof</imie>
+					<nazwisko>Czarny</nazwisko>
+					<email>blackholesaremypassion@cnn.com</email>
+					<tel>147-852-369</tel>
+					<wyniki zgoda="NIE"/>
+				</oautorze>
+				<obiekt>Czarna dziura</obiekt>
+				<miejsce>Pekin, Chiny</miejsce>
+				<data>2019-08-11</data>
+				<godzina>19:15:00</godzina>
+				<obraz zrodlo="images/czarna.jpg"/>
+			</zdjecie>
+			<zdjecie id="5">
+				<oautorze>
+					<nazwisko>Mleczny</nazwisko>
+					<imie>Szymon</imie>
+					<email>milklover30@mlekovita.pl</email>
+					<wyniki zgoda="TAK"/>
+				</oautorze>
+				<obiekt>Droga Mleczna</obiekt>
+				<miejsce>Wysokie Mazowieckie, Polska</miejsce>
+				<data>2019-01-04</data>
+				<godzina>09:06:00</godzina>
+				<obraz zrodlo="images/drogamleczna.jpg"/>
+				<komentarz>Długo polowałem na ten widok, ale udało się.</komentarz>
+			</zdjecie>
+		</album>
+		<album year="2020">
+			<naglowek>Baza nagrodzonych fotografii — Rok 2020</naglowek>
+			<zdjecie id="6">
+				<oautorze>
+					<imie>Jakub</imie>
+					<nazwisko>Bliski</nazwisko>
+					<email>bliski@sunew.com</email>
+					<tel>985142362</tel>
+					<wyniki zgoda="TAK"/>
+				</oautorze>
+				<obiekt>Wenus, planeta</obiekt>
+				<miejsce>Warszawa, Polska</miejsce>
+				<data>2020-04-15</data>
+				<godzina>03:45:00</godzina>
+				<obraz zrodlo="images/wenus.jpg"/>
+			</zdjecie>
+			<zdjecie id="7">
+				<oautorze>
+					<imie>Karolina</imie>
+					<nazwisko>Zimna</nazwisko>
+					<email>zimnacarol@o2.pl</email>
+					<tel>125496450</tel>
+					<wyniki zgoda="NIE"/>
+				</oautorze>
+				<obiekt>Zorza polarna</obiekt>
+				<miejsce>Tromso, Norwegia</miejsce>
+				<data>2020-01-11</data>
+				<godzina>01:25:00</godzina>
+				<obraz zrodlo="images/zorze.jpg"/>
+				<komentarz>Zrobiłam to zdjęcie podczas wycieczki naukowej.</komentarz>
+			</zdjecie>
+			<zdjecie id="8">
+				<oautorze>
+					<imie>Maciej</imie>
+					<nazwisko>Mały</nazwisko>
+					<email>minimaciek@sun.org</email>
+					<wyniki zgoda="TAK"/>
+				</oautorze>
+				<obiekt>Merkury, planeta</obiekt>
+				<miejsce>Berlin, Niemcy</miejsce>
+				<data>2020-09-30</data>
+				<godzina>21:11:00</godzina>
+				<obraz zrodlo="images/merkury.jpg"/>
+			</zdjecie>
+			<zdjecie id="9">
+				<oautorze>
+					<nazwisko>Jankowski</nazwisko>
+					<imie>Damian</imie>
+					<email>s188597@student.pg.edu.pl</email>
+					<wyniki zgoda="TAK"/>
+				</oautorze>
+				<obiekt>Starlinki, satelity</obiekt>
+				<miejsce>Gdansk, Polska</miejsce>
+				<data>2020-06-05</data>
+				<godzina>00:47:00</godzina>
+				<obraz zrodlo="images/starlinki.jpg"/>
+				<komentarz>Starałem się jak mogłem, mam nadzieję, że moje zdjęcie zostanie wyróżnione.</komentarz>
+			</zdjecie>
+			<zdjecie id="10">
+				<oautorze>
+					<imie>Stefan</imie>
+					<nazwisko>Lato</nazwisko>
+					<email>summerstephan@bbc.com</email>
+					<tel>654101501</tel>
+					<wyniki zgoda="NIE"/>
+				</oautorze>
+				<obiekt>Kometa NEOWISE</obiekt>
+				<miejsce>Nowy Jork, Stany Zjednoczone</miejsce>
+				<data>2020-12-19</data>
+				<godzina>17:32:00</godzina>
+				<obraz zrodlo="images/kometaneo.jpg"/>
+			</zdjecie>
+		</album>
+	</galeria>
+
+	<ciala-niebieskie>
+		<naglowek>Baza obiektów na zdjęciach</naglowek>
+		<cialo n="1">
+			<nazwa>Jowisz</nazwa>
+			<typ>planeta gazowa</typ>
+			<rok-odkrycia>starożytność</rok-odkrycia>
+			<odleglosc>5.053 au</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Jowisz">Więcej o Jowiszu</link>
+		</cialo>
+		<cialo n="2">
+			<nazwa>Słońce</nazwa>
+			<typ>gwiazda karłowata</typ>
+			<rok-odkrycia>nieznana</rok-odkrycia>
+			<odleglosc>149600000 km</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Slonce">Więcej o Słońcu</link>
+		</cialo>
+		<cialo n="3">
+			<nazwa>Centrum Messier 87</nazwa>
+			<typ>czarna dziura</typ>
+			<odkrywca>
+				<imie>Charles</imie>
+				<nazwisko>Messier</nazwisko>
+			</odkrywca>
+			<rok-odkrycia>1781</rok-odkrycia>
+			<odleglosc>53000000 ly</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Galaktyka_Panna_A">Więcej o Messier 87</link>
+		</cialo>
+		<cialo n="4">
+			<nazwa>Droga Mleczna</nazwa>
+			<typ>galaktyka spiralna</typ>
+			<rok-odkrycia>starożytność</rok-odkrycia>
+			<odleglosc>0 km</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Droga_Mleczna">Więcej o Drodze Mlecznej</link>
+		</cialo>
+		<cialo n="5">
+			<nazwa>Wenus</nazwa>
+			<typ>planeta skalista</typ>
+			<rok-odkrycia>starożytność</rok-odkrycia>
+			<odleglosc>0.4692 au</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Wenus">Więcej o Wenus</link>
+		</cialo>
+		<cialo n="6">
+			<nazwa>Zorze polarne</nazwa>
+			<typ>zorza polarna</typ>
+			<rok-odkrycia>średniowiecze</rok-odkrycia>
+			<odleglosc>150 km</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Zorza_polarna">Więcej o zorzach polarnych</link>
+		</cialo>
+		<cialo n="7">
+			<nazwa>Merkury</nazwa>
+			<typ>planeta skalista</typ>
+			<rok-odkrycia>starożytność</rok-odkrycia>
+			<odleglosc>1.444 au</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Merkury">Więcej o Merkurym</link>
+		</cialo>
+		<cialo n="8">
+			<nazwa>StarLinki</nazwa>
+			<typ>sztuczne satelity</typ>
+			<odkrywca>
+				<nazwisko>Musk</nazwisko>
+				<imie>Elon</imie>
+			</odkrywca>
+			<rok-odkrycia>2019</rok-odkrycia>
+			<odleglosc>550 km</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/Starlink">Więcej o Starlinkach</link>
+		</cialo>
+		<cialo n="9">
+			<nazwa>Kometa NEOWISE</nazwa>
+			<typ>kometa długookresowa</typ>
+			<odkrywca>
+				<imie>Neo</imie>
+				<nazwisko>Wise</nazwisko>
+			</odkrywca>
+			<rok-odkrycia>2020</rok-odkrycia>
+			<odleglosc>1149000000 km</odleglosc>
+			<link zrodlo="https://pl.wikipedia.org/wiki/C/2020_F3_(NEOWISE)">Więcej o Komecie NEOWISE</link>
+		</cialo>
+	</ciala-niebieskie>
+
+	<media>
+		<obraz zrodlo="zacmienie1851.jpg" podpis="Pierwsze zdjęcie zaćmienia Słońca wykonane przez Johann Julius Friedrich Berkowskiego 28 lipca 1851 r."/>
+		<obraz zrodlo="images/telhubbla.jpg" podpis="Teleskop Hubble’a widziany z pokładu promu kosmicznego Discovery."/>
+		<obraz zrodlo="images/blue_marble.png" podpis="The Blue Marble zdjęcie Ziemi wykonane 7 grudnia 1972 przez załogę Apollo 17 z odległości około 29 000 km"/>
+		<obraz zrodlo="images/zacmienie2021.jpg" podpis="Zdjęcie częściowego zaćmienia Słońca w czerwcu 2021 roku."/>
+	</media>
+
+</kosmicznezdjecia>

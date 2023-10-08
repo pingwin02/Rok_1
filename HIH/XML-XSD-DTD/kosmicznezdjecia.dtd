@@ -1,0 +1,54 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT kosmicznezdjecia (galeria,ciala-niebieskie,media)>
+<!ATTLIST kosmicznezdjecia
+xmlns:xsi CDATA "http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation CDATA "kosmicznezdjecia.xsd">
+
+<!ENTITY % zrodlo.global 'zrodlo CDATA #REQUIRED'>
+<!ENTITY % id.global 'id CDATA #REQUIRED' >
+
+<!ELEMENT galeria (album+)>
+
+<!ELEMENT album (naglowek,zdjecie+)>
+<!ATTLIST album year (2019|2020) #REQUIRED>
+
+<!ELEMENT naglowek (#PCDATA)>
+
+<!ELEMENT zdjecie (oautorze,obiekt,miejsce,data,godzina,obraz,komentarz?)>
+<!ATTLIST zdjecie %id.global;>
+
+<!ELEMENT oautorze ((imie|nazwisko)*,email,tel?,wyniki)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT wyniki EMPTY>
+<!ATTLIST wyniki zgoda (TAK|NIE) "TAK">
+
+<!ELEMENT obiekt (#PCDATA)>
+<!ELEMENT miejsce (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT godzina (#PCDATA)>
+<!ELEMENT obraz EMPTY>
+<!ATTLIST obraz 
+%zrodlo.global;
+podpis CDATA #IMPLIED>
+<!ELEMENT komentarz (#PCDATA)>
+
+<!ELEMENT ciala-niebieskie (naglowek,cialo+)>
+
+<!ELEMENT cialo (nazwa,typ,odkrywca?,rok-odkrycia,miejsce-odkrycia?,odleglosc,link)>
+<!ATTLIST cialo n CDATA #REQUIRED>
+
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT typ (#PCDATA)>
+<!ELEMENT odkrywca (imie|nazwisko)*>
+<!ELEMENT rok-odkrycia (#PCDATA)>
+<!ELEMENT miejsce-odkrycia (#PCDATA)>
+<!ELEMENT odleglosc (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link %zrodlo.global;>
+
+
+<!ELEMENT media (obraz+)>

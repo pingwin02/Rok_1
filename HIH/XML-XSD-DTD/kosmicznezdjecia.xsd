@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	
+	<xs:element name="kosmicznezdjecia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="galeria" type="galeriaType" />
+				<xs:element name="ciala-niebieskie" type="niebieskieType" />
+				<xs:element name="media" type="mediaType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="galeriaType">
+		<xs:sequence>
+			<xs:element name="album" type="albumType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="albumType">
+		<xs:sequence>
+			<xs:element name="naglowek" type="string120Type" />
+			<xs:element name="zdjecie" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="info-zdjecia" />
+					</xs:sequence>
+					<xs:attribute ref="id" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="year" type="xs:gYear" use="required" />
+	</xs:complexType>
+
+	<xs:group name="info-zdjecia">
+		<xs:sequence>
+			<xs:element name="oautorze" type="autoraddType"/>
+			<xs:element name="obiekt" type="twolistType"/>
+			<xs:element name="miejsce" type="miejsceType"/>
+			<xs:element name="data" type="data"/>
+			<xs:element name="godzina" type="xs:time"/>
+			<xs:element name="obraz" type="obrazType"/>
+			<xs:element name="komentarz" type="string120Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="niebieskieType">
+		<xs:sequence>
+			<xs:element ref="naglowek"/>
+			<xs:element name="cialo" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="nazwa" type="string35Type"/>
+						<xs:element name="typ" type="twolistType"/>
+						<xs:element name="odkrywca" type="autorType" minOccurs="0"/>
+						<xs:element name="rok-odkrycia" type="data"/>
+						<xs:element name="odleglosc">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([0-9])+(\.[0-9]+)? (km|ly|au)"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element ref="link"/>
+					</xs:all>
+					<xs:attribute name="n" type="xs:byte" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="linkiType">
+		<xs:sequence>
+			<xs:element name="link" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="mediaType">
+		<xs:sequence>
+			<xs:element name="obraz" type="obrazType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:attribute name="id">
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	
+	<xs:element name="naglowek">
+		<xs:simpleType>
+			<xs:restriction base="string35Type"/>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:simpleType name="string120Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2" />
+			<xs:maxLength value="120" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="string35Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2" />
+			<xs:maxLength value="35" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:attribute name="zrodlo">
+		<xs:simpleType>
+			<xs:restriction base="xs:anyURI"/>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:simpleType name="data">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:minInclusive value="2019-01-01"/>
+					<xs:maxInclusive value="2021-12-31"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="starożytność"/>
+					<xs:enumeration value="średniowiecze"/>
+					<xs:enumeration value="nieznana"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:gYear">
+					<xs:minInclusive value="0001"/>
+					<xs:maxInclusive value="2021"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	
+	<xs:simpleType name="mail">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="autorType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="imie" type="string35Type"/>
+			<xs:element name="nazwisko" type="string35Type"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="autoraddType">
+		<xs:complexContent>
+			<xs:extension base="autorType">
+				<xs:sequence>
+					<xs:element name="email" type="mail"/>
+					<xs:element name="tel" type="tel" minOccurs="0"/>
+					<xs:element name="wyniki">
+						<xs:complexType>
+							<xs:attribute name="zgoda">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="TAK|NIE" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="stringList">
+		<xs:list itemType="string35Type"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="twolistType">
+		<xs:restriction base="stringList">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="miejsceType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([A-Z][a-z]+ *)+, ([A-Z][a-z]+ *)+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="obrazType">
+		<xs:attribute ref="zrodlo" use="required" />
+		<xs:attribute name="podpis" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="5" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:element name="link">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="zrodlo" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="tel">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:float">
+					<xs:minExclusive value="100000000"/>
+					<xs:maxExclusive value="999999999"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+
+</xs:schema>
