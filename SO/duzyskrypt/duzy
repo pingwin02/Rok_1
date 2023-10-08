@@ -1,0 +1,25 @@
+.TH man 1 "05 maj 2022" "1.0" "Duży skrypt - MANUAL"
+.SH NAZWA
+Czyszczenie plików tymczasowych/Menadżer pamięci v1.0
+.SH OPIS
+Skrypt ten ma za zadanie czyścić system z niepotrzebnych plików tymczasowych, które często zajmują dużo miejsca. Pokazuje procent zajętego miejsca na dysku wraz z podziałem na typy plików. Z poziomu okna można usunąć wybrane pliki. Do pełnego działania skrypt potrzebuje uprawnień root. Uruchomić go trzeba za pomocą sudo ./duzyskrypt.sh
+.SH OPCJE
+Informacje o użytkowniku - podaje informacje o zalogowanym użytkowniku, wybór tej opcji pokaże więcej szczegółów
+
+Czas - pokazuje aktualną datę i godzinę, wybór opcji odświeży czas
+
+Zmień folder roboczy - wybranie tej opcji umożliwi zmianę aktualnego folderu roboczego, kolejne opcje są od niego uzależnione
+
+Informacje o dysku - podaje informacje nt. procenta zajętości dysku oraz jego pojemności
+
+Szczegóły folderu roboczego - podaje rozmiar folderu roboczego, po wybraniu tej opcji skrypt podaje listę wszystkich plików w tym folderze posortowanych rozmiarem oraz w następnym oknie szczegóły nt. łącznego rozmiaru poszczególnych typów plików"
+
+Usuń wybrane pliki z <folder roboczy> - umożliwa wybór, a potem usunięcie wybranych plików z systemu. UWAGA! Proces jest nieodwracalny
+
+Pliki tymczasowe - umożliwa wykasowanie plików tymczasowych z folderów wskazanych w paths.rc. Zalecane jest zrestartowanie systemu po operacji.
+.SH ZNANE BŁĘDY
+Skrypt może usunąć cały system.
+.SH AUTOR
+Damian Jankowski s188597
+.SH KONTAKT
+Błędy należy zgłaszać przez s188597@student.pg.edu.pl
